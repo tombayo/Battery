@@ -158,9 +158,9 @@ print_status() {
 
     if ((output_tmux)); then
         if ((BATT_CONNECTED)); then
-            printf "%s%s %s%s" "[$BATT_PCT%-]" "#[default]"
-        else
             printf "%s%s %s%s" "[$BATT_PCT%+]" "#[default]"
+        else
+            printf "%s%s %s%s" "[$BATT_PCT%-]" "#[default]"
         fi
     elif ((output_zsh)); then
         printf "%%B%s%s %s" "$COLOR" "[$BATT_PCT%%]" "$GRAPH"
